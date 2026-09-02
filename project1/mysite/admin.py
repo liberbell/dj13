@@ -14,6 +14,9 @@ class CustomUserAdmin(UserAdmin):
         (None, {
             "fields": (
                 "is_active",
+                "is_admin",
             )
         })
     )
+    
+    list_display = ("email", "is_active", "is_admin")
