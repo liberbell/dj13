@@ -20,3 +20,6 @@ class CustomUserAdmin(UserAdmin):
     )
     
     list_display = ("email", "is_active", "is_admin")
+    list_filter = ()
+    ordering = ()
+    filter_horizontal = ()
