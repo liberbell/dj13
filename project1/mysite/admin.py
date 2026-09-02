@@ -23,3 +23,5 @@ class CustomUserAdmin(UserAdmin):
     list_filter = ()
     ordering = ()
     filter_horizontal = ()
+    
+admin.site.register(User, CustomUserAdmin)
