@@ -46,8 +46,8 @@ class UserManager(BaseUserManager):
             "Does the user have a specific permission?"
             return True
         
-        def has_module_perm(self, app_lebel):
-            "Does the user have permission to view the app `app_level`?"
+        def has_module_perms(self, app_label):
+            "Does the user have permissions to view the app `app_lavel`?"
             return True
         
         @property
