@@ -11,7 +11,7 @@ class UserManager(BaseUserManager):
             email = self.normalize_email(email),
         )
         
-        user.set_passwrod(password)
+        user.set_password(password)
         user.save(using=self._db)
         return user
     
