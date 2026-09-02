@@ -42,3 +42,15 @@ class UserManager(BaseUserManager):
         def __str__(self):
             return self.email
         
+        def has_perm(self, perm, obj=None):
+            "Does the user have a specific permission?"
+            return True
+        
+        def has_module_perm(self, app_lebel):
+            "Does the user have permission to view the app `app_level`?"
+            return True
+        
+        @property
+        def is_staff(self):
+            "Is the user a member of staff?"
+            return self.is_admin
