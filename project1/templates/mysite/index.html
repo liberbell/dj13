@@ -41,13 +41,16 @@
             <div class="col-md-8">
                 <h3 class="pb-4 mb-4 font-italic border-bottom">Django Lesson</h3>
             </div>
-            {{ articles.0.title }}
+
+            {% for obj in articles %}
 
             <div class="blog-post">
-                <h2 class="blog-post-title">Blog sample</h2>
-                <p class="blog-post-meta">2026/08/30 by <a href="#">James</a></p>
+                <h2 class="blog-post-title">{{ obj.title }}</h2>
+                <p class="blog-post-meta">{{ obj.created_at }}<a href="#">{{ obj.author }}</a></p>
                 <p></p>
             </div>
+
+            {% endfor %}
 
             <nav class="blog-pagination">
                 <a class="btn btn-outline-primary" href="#">Old articles</a>
