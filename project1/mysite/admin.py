@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
+from django.contrib.auth.models import Group
 from mysite.models import User
 
 # Register your models here.
@@ -25,3 +26,4 @@ class CustomUserAdmin(UserAdmin):
     filter_horizontal = ()
     
 admin.site.register(User, CustomUserAdmin)
+admin.site.unregister(Group)
