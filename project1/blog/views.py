@@ -3,5 +3,7 @@ from django.http import HttpResponse
 
 # Create your views here.
 def article(request, pk):
-    context = {}
+    context = {
+        "pk": pk
+    }
     return render(request, "blog/article.html", context)
