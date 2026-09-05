@@ -46,8 +46,8 @@
 
             <div class="blog-post">
                 <h2 class="blog-post-title">{{ obj.title }}</h2>
-                <p class="blog-post-meta">{{ obj.created_at }}<a href="#">{{ obj.author }}</a></p>
-                <p></p>
+                <p class="blog-post-meta">{{ obj.created_at }}<a href="#"> by {{ obj.author }}</a></p>
+                <p>{{ obj.text }}</p>
             </div>
 
             {% endfor %}
