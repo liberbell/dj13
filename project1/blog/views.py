@@ -7,7 +7,7 @@ def article(request, pk):
     obj = Article.objects.get(pk=pk)
     
     context = {
-        "pk": pk
+        "article": obj
     }
     
     return render(request, "blog/article.html", context)
