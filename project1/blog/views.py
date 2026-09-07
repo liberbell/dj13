@@ -10,7 +10,8 @@ def index(request):
     page_num = request.Get.get("page")
     
     context = {
-        "articles": objs
+        "articles": objs,
+        "page_obj": paginator.get_page(page_num)
     }
     
     return render(request, "blog/blogs.html", context)
