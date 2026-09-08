@@ -5,7 +5,7 @@ from blog.models import Article
 # Create your views here.
 def index(request):
     
-    objs = Article.objects.all()
+    objs = Article.objects.all()[:3]
     context = {
         "title": "Really site",
         "articles": objs,
