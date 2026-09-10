@@ -11,3 +11,9 @@ def index(request):
         "articles": objs,
     }
     return render(request, "mysite/index.html", context)
+
+def login(request):
+    context = {
+        
+    }
+    return render(request, "mysite/login.html", context)
