@@ -11,6 +11,8 @@
             <div class="col-lg-3 m-auto">
 
                 <form class="form-sigin mx-4" action="" method="POST">
+                    {% csrf_token %}
+                    
                     <div class="text-center">
                         <h1 class="h5 my-4">Log in</h1>
                     </div>
