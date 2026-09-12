@@ -16,4 +16,6 @@ def login(request):
     context = {
         
     }
+    if request.method == "POST":
+        context["req"] = request.POST
     return render(request, "mysite/login.html", context)
