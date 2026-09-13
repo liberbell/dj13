@@ -9,7 +9,13 @@
             </div>
 
             <div class="col-lg-3 m-auto">
-                {{ req }}
+                
+                {% if user.is_authenticated %}
+                    logged in
+                {% else %}
+                    not logged in
+                {% endif %}
+                    
 
                 <form class="form-sigin mx-4" action="" method="POST">
                     {% csrf_token %}
