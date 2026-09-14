@@ -8,7 +8,14 @@ class UserCreationForm(forms.ModelForm):
         model = get_user_model()
         fields = ("email")
         
-    def clan_password(self):
+    def clean_password(self):
         password = self.cleaned_data.get("password")
         return password
-        
+    
+    def save(self, commit = True):
+        user = super().save(commit=False)
+        user.set_password(self.cleaned_data["password"])
+        if commit:
+            user.save()
+            
+        return user
