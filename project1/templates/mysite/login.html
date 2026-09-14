@@ -9,13 +9,6 @@
             </div>
 
             <div class="col-lg-3 m-auto">
-                
-                {% if request.user.is_authenticated %}
-                    logged in
-                {% else %}
-                    not logged in
-                {% endif %}
-                    
 
                 <form class="form-sigin mx-4" action="" method="POST">
                     {% csrf_token %}
@@ -32,13 +25,12 @@
                     </div>
 
                     <button class="btn btn-primary btn-block my-3" type="submit">Sign In</button>
-                    <button class="btn btn-primary btn-block my-3" type="submit">Logout</button>
                 </form>
-<!-- 
-                <form class="form-sigin mx-4" action="/logout/" method="post">
-                    {% csrf_token %}
-                    <button class="btn btn-primary btn-block my-3" type="submit">Log out</button>
-                </form> -->
+
+            <form class="form-sigin mx-4" action="/logout/" method="post">
+                {% csrf_token %}
+                <button class="btn btn-primary btn-block my-3" type="submit">Log out</button>
+            </form>
             </div>
         </div>
     </div>
