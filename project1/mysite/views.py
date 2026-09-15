@@ -23,3 +23,9 @@ def index(request):
 
 class Login(LoginView):
     template_name = "mysite/login.html"
+    
+def signup(request):
+    context = {}
+    
+    if request.method == "POST":
+        form = 
