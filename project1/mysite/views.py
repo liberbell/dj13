@@ -33,3 +33,6 @@ def signup(request):
         
         if form.is_valid():
             user = form.save(commit=False)
+            # user.is_active = False
+            user.save()
+    return render(request, "mysite/auth.html", context)
