@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.views import LoginView
 from blog.models import Article
 from mysite.forms import UserCreationForm
+from django.contrib import messages
 
 # Create your views here.
 def index(request):
@@ -35,6 +36,7 @@ def signup(request):
             user = form.save(commit=False)
             # user.is_active = False
             user.save()
+            messages.success(request, "Registered success")
             return redirect("/")
         
     return render(request, "mysite/auth.html", context)
