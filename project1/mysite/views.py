@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.views import LoginView
 from blog.models import Article
 from mysite.forms import UserCreationForm
@@ -35,4 +35,6 @@ def signup(request):
             user = form.save(commit=False)
             # user.is_active = False
             user.save()
+            return redirect("/")
+        
     return render(request, "mysite/auth.html", context)
