@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import Group
 from mysite.models import User
+from mysite.forms import UserCreationForm
 
 # Register your models here.
 class CustomUserAdmin(UserAdmin):
@@ -24,6 +25,13 @@ class CustomUserAdmin(UserAdmin):
     list_filter = ()
     ordering = ()
     filter_horizontal = ()
+    add_fieldsets = (
+        (None, {
+            'fields': ('email', 'password',),
+        }),
+    )
+    
+    add_form = UserCreationForm
     
 admin.site.register(User, CustomUserAdmin)
 admin.site.unregister(Group)
