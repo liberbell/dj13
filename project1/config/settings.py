@@ -144,8 +144,8 @@ LOGOUT_REDIRECT_URL = '/login/'
 
 MESSAGE_TAGS = {
     messages.ERROR: 'rounded-0 alert alert-danger',
-    messages.WARNING: 'rounded-0 alert alert-danger',
-    messages.SUCCESS: 'rounded-0 alert alert-danger',
-    messages.INFO: 'rounded-0 alert alert-danger',
-    messages.DEBUG: 'rounded-0 alert alert-danger',
+    messages.WARNING: 'rounded-0 alert alert-warning',
+    messages.SUCCESS: 'rounded-0 alert alert-success',
+    messages.INFO: 'rounded-0 alert alert-info',
+    messages.DEBUG: 'rounded-0 alert alert-secondary',
 }
