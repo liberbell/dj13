@@ -18,7 +18,7 @@
                             
                             {% if "login" in request.path %}
                                 Log in
-                            {% else %}
+                            {% elif "signup" in request.path %}
                                 Sign up
                             {% endif %}
                                 
