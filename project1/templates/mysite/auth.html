@@ -39,6 +39,18 @@
                 {% csrf_token %}
                 <button class="btn btn-primary btn-block my-3" type="submit">Log out</button>
             </form>
+
+            
+            {% if "login" in request.path %}
+                <div class="text-center">
+                    <a href="/sighup" class="link-seconday">Sign up</a>
+                </div>
+            {% elif "signup" in request.path %}
+                <div class="text-center">
+                    <a href="/login" class="link-seconday">Log in</a>
+                </div>
+            {% endif %}
+                
             </div>
         </div>
     </div>
