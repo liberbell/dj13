@@ -26,6 +26,12 @@ def index(request):
 class Login(LoginView):
     template_name = "mysite/auth.html"
     
+    def form_valid(self, form):
+        return super().form_valid(form)
+    
+    def form_invalid(self, form):
+        return super().form_invalid(form)
+    
 def signup(request):
     context = {}
     
