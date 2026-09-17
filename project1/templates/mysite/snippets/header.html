@@ -11,12 +11,14 @@
         <nav class="nav d-flex justify-content-between">
             <a class="p-2 link-secondary" href="/blog/">Blog</a>
             <a class="p-2 link-secondary" href="#">Contact</a>
-            <a class="p-2 link-secondary" href="#">Menu</a>
-
             
             {% if user.is_authenticated %}
-                <a class="p-2 link-secondary" href="/logout"></a>
+                <a class="p-2 link-secondary" href="/logout">Log out</a>
             {% else %}
+                <div>
+                    <a class="p-2 link-secondary" href="/login">Log in</a>
+                    <a class="btn btn-outline-info" href="/logout">Sign up</a>
+                </div>
             {% endif %}
                 
         </nav>
