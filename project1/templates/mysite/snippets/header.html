@@ -13,8 +13,10 @@
             <a class="p-2 link-secondary" href="#">Contact</a>
             
             {% if user.is_authenticated %}
+                {% csrf_token %}
                 <a class="p-2 link-secondary" href="/logout">Log out</a>
             {% else %}
+                {% csrf_token %}
                 <div>
                     <a class="p-2 link-secondary" href="/login">Log in</a>
                     <a class="btn btn-outline-info" href="/logout">Sign up</a>
