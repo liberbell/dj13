@@ -20,11 +20,11 @@
                 <div>
                     <a class="p-2 link-secondary" href="/login">Log in</a>
                     <!-- <a class="btn btn-outline-info" href="/logout">Sign up</a> -->
+                    <form class="form-sigin mx-4" action="/logout/" method="post">
+                        {% csrf_token %}
+                        <button class="btn btn-outline-info" type="submit">Log out</button>
+                    </form>
                 </div>
-                <form class="form-sigin mx-4" action="/logout/" method="post">
-                    {% csrf_token %}
-                    <button class="btn btn-outline-info" type="submit">Log out</button>
-                </form>
             {% endif %}
                 
         </nav>
