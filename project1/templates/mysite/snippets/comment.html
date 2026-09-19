@@ -10,4 +10,13 @@
             </p>
         </a>
     </div>
+    
+    {% if user.is_authenticated %}
+        <form method="POST" class="my-4" action="">
+            <div class="mb-2">
+                <label for="">Comment</label>
+            </div>
+        </form>
+    {% endif %}
+        
 </div>
