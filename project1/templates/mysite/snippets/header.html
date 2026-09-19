@@ -13,17 +13,15 @@
             <a class="p-2 link-secondary" href="#">Contact</a>
             
             {% if user.is_authenticated %}
-                {% csrf_token %}
-                <a class="p-2 link-secondary" href="/logout">Log out</a>
+                <form class="form-sigin mx-4" action="/logout/" method="post">
+                    {% csrf_token %}
+                    <button class="btn btn-outline-info" type="submit">Log out</button>
+                </form>
             {% else %}
                 {% csrf_token %}
                 <div>
                     <a class="p-2 link-secondary" href="/login">Log in</a>
-                    <!-- <a class="btn btn-outline-info" href="/logout">Sign up</a> -->
-                    <form class="form-sigin mx-4" action="/logout/" method="post">
-                        {% csrf_token %}
-                        <button class="btn btn-outline-info" type="submit">Log out</button>
-                    </form>
+                    <a class="btn btn-outline-info" href="/logout">Sign up</a>
                 </div>
             {% endif %}
                 
