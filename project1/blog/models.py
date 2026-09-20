@@ -12,4 +12,4 @@ class Article(models.Model):
 class Comment(models.Model):
     comment = models.TextField(default="", max_length=1000)
     created_at = models.DateField(auto_now_add=True)
-    author = models.ForeignKey(get_user_model())
+    author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
