@@ -1,14 +1,18 @@
 <div>
     <h3 class="h6">Comment</h3>
     <div class="list-group">
-        <a class="list-group-item list-group-item-action p-3 rounded-0" href="">
-            <p class="m-0">
-                <small>comment area</small>
-            </p>
-            <p class="m-0">
-                <small>20260919</small>
-            </p>
-        </a>
+
+        
+        {% for comment in comments %}            
+            <a class="list-group-item list-group-item-action p-3 rounded-0" href="">
+                <p class="m-0">
+                    <small>{{ comment.comment }}</small>
+                </p>
+                <p class="m-0">
+                    <small>{{ commnet.created_at }}</small>
+                </p>
+            </a>
+        {% endfor %}
     </div>
     
     {% if user.is_authenticated %}
