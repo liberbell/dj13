@@ -21,6 +21,10 @@
                 <button class="btn btn-sm btn-outline-success" type="submit">Add comment</button>
             </div>
         </form>
+    {% else %}
+        <p class="my-4">
+            Add comment <a href="/login/">Log in</a>
+        </p>
     {% endif %}
         
 </div>
