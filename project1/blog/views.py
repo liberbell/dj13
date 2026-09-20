@@ -25,4 +25,8 @@ def article(request, pk):
         "comments": comments
     }
     
+    if request.method == "POST":
+        comment = request.POST.get("comment")
+        context["test"] = comment
+    
     return render(request, "blog/article.html", context)
