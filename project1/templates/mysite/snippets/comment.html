@@ -9,7 +9,7 @@
                     <small>{{ comment.comment }}</small>
                 </p>
                 <p class="m-0">
-                    <small>{{ commnet.created_at }}</small>
+                    <small>{{ comment.created_at }}</small>
                 </p>
             </a>
         {% endfor %}
@@ -19,7 +19,7 @@
         <form method="POST" class="my-4" action="">
             <div class="mb-2">
                 <label for="">Comment</label>
-                <textarea class="rounded-0 bg-light form-control" name="" id="" rows="3"></textarea>
+                <textarea class="rounded-0 bg-light form-control" name="comment" id="" rows="3"></textarea>
             </div>
             <div class="text-end">
                 <button class="btn btn-sm btn-outline-success" type="submit">Add comment</button>
