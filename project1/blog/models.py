@@ -13,3 +13,4 @@ class Comment(models.Model):
     comment = models.TextField(default="", max_length=1000)
     created_at = models.DateField(auto_now_add=True)
     author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    article = models.ForeignKey(Article, on_delete=models.CASCADE)
