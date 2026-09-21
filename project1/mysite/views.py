@@ -48,3 +48,8 @@ def signup(request):
             return redirect("/")
         
     return render(request, "mysite/auth.html", context)
+
+def mypage(request):
+    context = {}
+    
+    return render(request, "mysite/mypage.html", context)
