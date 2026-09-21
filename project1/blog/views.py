@@ -28,7 +28,10 @@ def article(request, pk):
     
     if request.method == "POST":
         form = CommentForm(request.POST)
-        comment = request.POST.get("comment")
-        context["test"] = comment
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.user = request.user
+            comment.article = obj
+            comment.save()
     
     return render(request, "blog/article.html", context)
