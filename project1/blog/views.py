@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from blog.models import Article, Comment
 from django.core.paginator import Paginator
+from .forms import CommentForm
 
 # Create your views here.
 def index(request):
@@ -26,6 +27,7 @@ def article(request, pk):
     }
     
     if request.method == "POST":
+        form = CommentForm(request.POST)
         comment = request.POST.get("comment")
         context["test"] = comment
     
