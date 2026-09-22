@@ -1,7 +1,7 @@
 {% extends 'mysite/base.html' %}
 
 
-{% block contents %}
+{% block content %}
 <main class="container">
     <div class="row">
         <div class="col-md-8">
@@ -9,7 +9,7 @@
 
             <form class="row g-3" action="" method="POST">
                 {% csrf_token %}
-                
+
                 <div class="col-12">
                     <label class="form-label">Publicity Name</label>
                     <input type="text" class="form-control" id="id_pubname" placeholder="John">
@@ -45,4 +45,4 @@
         </div>
     </div>
 </main>
-{% endblock contents %}
+{% endblock content %}
