@@ -1,1 +1,1 @@
-from account_models import User
+from .account_models import User
