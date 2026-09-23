@@ -2,10 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import Group
 from mysite.models.account_models import User
-<<<<<<< HEAD
 from mysite.models.profile_models import Profile
-=======
->>>>>>> 3005c404176166647ea94fc7dc73bd870ef3cf2e
 from mysite.forms import UserCreationForm
 
 # Register your models here.
