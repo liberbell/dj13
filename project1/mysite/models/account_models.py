@@ -57,7 +57,9 @@ class User(AbstractBaseUser):
         "Is the user a member of staff?"
         return self.is_admin
     
+@receiver(post_save, sender=User)
 def create_onetoone(sender, **kwargs):
     if kwargs("created"):
         from mysite.models.profile_models import Profile
         
+        Profile.objects.create(user=kwargs['instance'])
