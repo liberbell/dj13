@@ -59,7 +59,7 @@ class User(AbstractBaseUser):
     
 @receiver(post_save, sender=User)
 def create_onetoone(sender, **kwargs):
-    if kwargs.get("created"):
+    if kwargs["created"]:
         from mysite.models.profile_models import Profile
         
         Profile.objects.create(user=kwargs['instance'])
