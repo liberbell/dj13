@@ -6,7 +6,13 @@ from mysite.models.profile_models import Profile
 from mysite.forms import UserCreationForm
 
 # Register your models here.
+class ProfileInline(admin.StackedInline):
+    model = Profile
+    can_delete = False
+    
 class CustomUserAdmin(UserAdmin):
+    inlines = (ProfileInline,)
+    
     fieldsets = (
         (None, {
             "fields": (
