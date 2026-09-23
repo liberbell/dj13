@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 # Create your models here.
 class UserManager(BaseUserManager):
@@ -54,3 +56,8 @@ class User(AbstractBaseUser):
     def is_staff(self):
         "Is the user a member of staff?"
         return self.is_admin
+    
+def create_onetoone(sender, **kwargs):
+    if kwargs("created"):
+        from mysite.models.profile_models import Profile
+        
