@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import Group
 from mysite.models.account_models import User
+from mysite.models.profile_models import Profile
 from mysite.forms import UserCreationForm
 
 # Register your models here.
@@ -35,3 +36,5 @@ class CustomUserAdmin(UserAdmin):
     
 admin.site.register(User, CustomUserAdmin)
 admin.site.unregister(Group)
+
+admin.site.register(Profile)
