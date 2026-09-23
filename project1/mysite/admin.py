@@ -39,8 +39,7 @@ class CustomUserAdmin(UserAdmin):
     )
     
     add_form = UserCreationForm
+    inlines = (ProfileInline,)
     
 admin.site.register(User, CustomUserAdmin)
 admin.site.unregister(Group)
-
-admin.site.register(Profile)
