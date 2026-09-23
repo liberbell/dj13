@@ -1,5 +1,6 @@
 from django import forms
 from django.contrib.auth import get_user_model
+from mysite.models.profile_models import Profile
 
 class UserCreationForm(forms.ModelForm):
     password = forms.CharField(max_length=20)
@@ -19,3 +20,15 @@ class UserCreationForm(forms.ModelForm):
             user.save()
             
         return user
+    
+class ProfileForm(forms.ModelForm):
+    
+    class Meta:
+        model = Profile
+        fields = (
+            "username",
+            "zipcode",
+            "prefecture",
+            "city",
+            "address",
+        )
