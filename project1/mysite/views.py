@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.views import LoginView
 from blog.models import Article
-from mysite.forms import UserCreationForm
+from mysite.forms import UserCreationForm, ProfileForm
 from django.contrib import messages
 
 # Create your views here.
@@ -52,4 +52,11 @@ def signup(request):
 def mypage(request):
     context = {}
     
+    if request.method == "POST":
+        form = ProfileForm(request.POST)
+        if form.is_valid():
+            profile = form.save(commit=False)
+            profile.user = request.user
+            profile.save()
+            messages.success(request, "Registered success")
     return render(request, "mysite/mypage.html", context)
