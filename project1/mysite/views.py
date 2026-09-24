@@ -4,6 +4,7 @@ from blog.models import Article
 from mysite.forms import UserCreationForm, ProfileForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import login
 
 # Create your views here.
 def index(request):
@@ -45,6 +46,7 @@ def signup(request):
             user = form.save(commit=False)
             # user.is_active = False
             user.save()
+            login(request, user)
             messages.success(request, "Registered success")
             return redirect("/")
         
