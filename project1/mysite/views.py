@@ -3,6 +3,7 @@ from django.contrib.auth.views import LoginView
 from blog.models import Article
 from mysite.forms import UserCreationForm, ProfileForm
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def index(request):
@@ -49,6 +50,7 @@ def signup(request):
         
     return render(request, "mysite/auth.html", context)
 
+@login_required
 def mypage(request):
     context = {}
     
