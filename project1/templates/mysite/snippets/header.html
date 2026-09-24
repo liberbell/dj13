@@ -13,6 +13,9 @@
             <a class="p-2 link-secondary" href="#">Contact</a>
             
             {% if user.is_authenticated %}
+                <div>
+                    <a class="p-2 link-secondary" href="/mypage">My page</a>
+                </div>
                 <form class="form-sigin mx-4" action="/logout/" method="post">
                     {% csrf_token %}
                     <button class="btn btn-outline-info" type="submit">Log out</button>
