@@ -12,12 +12,12 @@
 
                 <div class="col-12">
                     <label class="form-label">Publicity Name</label>
-                    <input type="text" class="form-control" id="id_username" name="username" placeholder="John">
+                    <input type="text" class="form-control" id="id_username" name="username" placeholder="John" value="{{ user.profile.username }}">
                 </div>
 
                 <div class="col-md-2">
                     <label class="form-label">Zip code</label>
-                    <input type="text" class="form-control" id="id_zip" name="zipcode">
+                    <input type="text" class="form-control" id="id_zip" name="zipcode" value="{{ user.profile.zipcode}}">
                 </div>
 
                 <div class="col-md-4">
@@ -39,12 +39,12 @@
 
                 <div class="col-md-6">
                     <label class="form-label">City</label>
-                    <input type="text" class="form-control" id="id_city" name="city" placeholder="">
+                    <input type="text" class="form-control" id="id_city" name="city" placeholder="" value="{{ user.profile.city }}">
                 </div>
 
                 <div class="col-12">
                     <label class="form-label">Address</label>
-                    <input type="text" class="form-control" id="id_address" name="address" placeholder="">
+                    <input type="text" class="form-control" id="id_address" name="address" placeholder="" value="{{ user.profile.address }}">
                 </div>
 
                 <div class="col-12">
