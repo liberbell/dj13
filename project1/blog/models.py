@@ -3,7 +3,8 @@ from django.contrib.auth import get_user_model
 
 # Create your models here.
 class Tag(models.Model):
-    slug = models.CharField(unique=True)
+    slug = models.CharField(primary_key=True, unique=True, max_length=20)
+    name = models.CharField(unique=True, max_length=20)
 
 class Article(models.Model):
     title = models.CharField(default="", max_length=63)
