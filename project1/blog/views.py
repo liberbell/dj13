@@ -6,6 +6,7 @@ from .forms import CommentForm
 
 # Create your views here.
 def index(request):
+    ranks = Article.objects.order_by("-count")[:2]
     objs = Article.objects.all()
     paginator = Paginator(objs, 2)
     page_num = request.GET.get("page")
@@ -13,6 +14,7 @@ def index(request):
     context = {
         "page_obj": paginator.get_page(page_num),
         "page_num": page_num,
+        "ranks": ranks,
     }
     
     return render(request, "blog/blogs.html", context)
