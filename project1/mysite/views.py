@@ -8,11 +8,12 @@ from django.contrib.auth import login
 
 # Create your views here.
 def index(request):
-    
+    ranks = Article.objects.order_by("-count")[:2]
     objs = Article.objects.all()[:3]
     context = {
         "title": "Really site",
         "articles": objs,
+        "ranks": ranks,
     }
     return render(request, "mysite/index.html", context)
 
