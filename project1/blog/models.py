@@ -2,6 +2,9 @@ from django.db import models
 from django.contrib.auth import get_user_model
 
 # Create your models here.
+class Tag(models.Model):
+    slug = models.CharField(unique=True)
+
 class Article(models.Model):
     title = models.CharField(default="", max_length=63)
     text = models.TextField(default="")
