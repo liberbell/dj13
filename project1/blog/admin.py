@@ -5,7 +5,8 @@ class TagInline(admin.StackedInline):
     model = Article.tags.through
     
 class ArticleAdmin(admin.ModelAdmin):
-    inline = [TagInline]
+    inlines = [TagInline]
+    exclude = ["tags", ]
 
 # Register your models here.
 admin.site.register(Article, ArticleAdmin)
