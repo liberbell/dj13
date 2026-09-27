@@ -4,7 +4,8 @@ from blog.models import Article, Comment, Tag
 class TagInline(admin.StackedInline):
     model = Article.tags.through
     
-class ArticleAdmin(admin.ModelAdmin)
+class ArticleAdmin(admin.ModelAdmin):
+    inline = [TagInline]
 
 # Register your models here.
 admin.site.register(Article)
