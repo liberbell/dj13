@@ -16,6 +16,7 @@ class Article(models.Model):
     created_at = models.DateField(auto_now_add=True)
     updated_at = models.DateField(auto_now=True)
     count = models.IntegerField(default=0)
+    tags = models.ManyToManyField(Tag, blank=True)
     
 class Comment(models.Model):
     comment = models.TextField(default="", max_length=1000)
