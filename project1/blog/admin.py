@@ -8,6 +8,6 @@ class ArticleAdmin(admin.ModelAdmin):
     inline = [TagInline]
 
 # Register your models here.
-admin.site.register(Article)
+admin.site.register(Article, ArticleAdmin)
 admin.site.register(Comment)
 admin.site.register(Tag)
