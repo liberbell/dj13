@@ -3,6 +3,7 @@ from blog.models import Article, Comment, Tag
 
 class TagInline(admin.TabularInline):
     model = Article.tags.through
+    extra = 0
     
 class ArticleAdmin(admin.ModelAdmin):
     inlines = [TagInline]
