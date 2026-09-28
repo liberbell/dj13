@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from blog.models import Article, Comment
+from blog.models import Article, Comment, Tag
 from django.core.paginator import Paginator
 from .forms import CommentForm
 
@@ -43,4 +43,4 @@ def article(request, pk):
     return render(request, "blog/article.html", context)
 
 def tags(request, slug):
-    
+    tag = Tag.objects.get(slug=slug)
