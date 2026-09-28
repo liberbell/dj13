@@ -41,3 +41,6 @@ def article(request, pk):
     }
     
     return render(request, "blog/article.html", context)
+
+def tags(request, slug):
+    
