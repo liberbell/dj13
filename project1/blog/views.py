@@ -11,6 +11,7 @@ def index(request):
     page_num = request.GET.get("page")
     
     context = {
+        "page_title": "Django Lesson",
         "page_obj": paginator.get_page(page_num),
         "page_num": page_num,
     }
