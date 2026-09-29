@@ -65,3 +65,8 @@ def mypage(request):
             profile.save()
             messages.success(request, "Registered success")
     return render(request, "mysite/mypage.html", context)
+
+def contact(request):
+    context = {}
+    
+    return render(request, "mysite/contact.html", context)
