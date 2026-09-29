@@ -32,8 +32,9 @@ ALLOWED_HOSTS = ['*']
 
 if DEBUG:
     with open(os.path.join(BASE_DIR, 'secret', 'secret_dev.yaml')) as file:
-        obj = yaml.safe_load(file)
-        os.environ['password'] = obj['password']
+        objs = yaml.safe_load(file)
+        for obs in objs:
+            os.environ['obj'] = objs['obj']
 else:
     pass
 
