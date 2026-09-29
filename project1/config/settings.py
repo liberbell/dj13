@@ -33,7 +33,7 @@ ALLOWED_HOSTS = ['*']
 if DEBUG:
     with open(os.path.join(BASE_DIR, 'secret', 'secret_dev.yaml')) as file:
         objs = yaml.safe_load(file)
-        for obs in objs:
+        for obj in objs:
             os.environ['obj'] = objs['obj']
 else:
     pass
