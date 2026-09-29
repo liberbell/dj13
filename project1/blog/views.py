@@ -44,3 +44,4 @@ def article(request, pk):
 
 def tags(request, slug):
     tag = Tag.objects.get(slug=slug)
+    tag.article_set.all()
