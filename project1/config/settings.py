@@ -157,3 +157,10 @@ MESSAGE_TAGS = {
     messages.INFO: 'rounded-0 alert alert-info',
     messages.DEBUG: 'rounded-0 alert alert-secondary',
 }
+
+EMAIL_BACKEND = 'django.core.email.backends.smtp.EmailBackend'
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = '1025'
+EMAIL_USE_TLS = False
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
