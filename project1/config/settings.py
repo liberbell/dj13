@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/6.1/ref/settings/
 from pathlib import Path
 import os
 from django.contrib import messages
+import yaml
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,6 +29,9 @@ SECRET_KEY = 'django-insecure-&=g^md6guz9htrz$yiu3ytu6_h$iu1_(avwjkalhf92eo)*)#l
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
+
+with open(os.path.join(BASE_DIR, 'secret', 'secret_dev.yaml')) as file:
+    obj = yaml.safe_load(file)
 
 
 # Application definition
