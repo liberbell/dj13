@@ -45,3 +45,13 @@ def article(request, pk):
 def tags(request, slug):
     tag = Tag.objects.get(slug=slug)
     tag.article_set.all()
+    
+    paginator = Paginator(objs, 2)
+    page_num = request.GET.get("page")
+    
+    context = {
+        "page_obj": paginator.get_page(page_num),
+        "page_num": page_num,
+    }
+    
+    return render(request, "blog/blogs.html", context)
