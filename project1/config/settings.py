@@ -32,6 +32,8 @@ ALLOWED_HOSTS = ['*']
 
 with open(os.path.join(BASE_DIR, 'secret', 'secret_dev.yaml')) as file:
     obj = yaml.safe_load(file)
+    
+    print("Password:", obj['password'])
 
 
 # Application definition
