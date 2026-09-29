@@ -30,11 +30,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-with open(os.path.join(BASE_DIR, 'secret', 'secret_dev.yaml')) as file:
-    obj = yaml.safe_load(file)
-    
-    print("Password:", obj['password'])
-
+if DEBUG:
+    with open(os.path.join(BASE_DIR, 'secret', 'secret_dev.yaml')) as file:
+        obj = yaml.safe_load(file)
+        os.environ['password'] = obj['password']
+else:
+    pass
 
 # Application definition
 
