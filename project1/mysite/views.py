@@ -73,7 +73,7 @@ def contact(request):
     
     if request.metthod == "POST":
         subject = "Request contact recieved"
-        message = "Request contact. "
+        message = "Request contact. \n Name: {}\n Email: {}"
         request.post.get("content")
         email_from = os.environ["DEFAULT_EMAIL_FROM"]
         email_to = [
