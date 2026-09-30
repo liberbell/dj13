@@ -5,6 +5,7 @@ from mysite.forms import UserCreationForm, ProfileForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
+from django.core.mail import send_mail
 
 # Create your views here.
 def index(request):
@@ -69,4 +70,8 @@ def mypage(request):
 def contact(request):
     context = {}
     
+    subject = "Title"
+    message = "Content"
+    email_from = 
+    send_mail()
     return render(request, "mysite/contact.html", context)
