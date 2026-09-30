@@ -6,6 +6,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
 from django.core.mail import send_mail
+import os
 
 # Create your views here.
 def index(request):
@@ -72,6 +73,15 @@ def contact(request):
     
     subject = "Title"
     message = "Content"
-    email_from = 
-    send_mail()
+    email_from = os.environ["DEFAULT_EMAIL_FROM"]
+    email_to = [
+        os.environ["DEFAULT_EMAIL_FROM"],
+        
+    ]
+    send_mail(
+        subject,
+        message,
+        email_from,
+        email_to
+    )
     return render(request, "mysite/contact.html", context)
