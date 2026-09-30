@@ -167,7 +167,7 @@ MESSAGE_TAGS = {
 
 MAILERS = {
     "default": {
-        "BACKEND": "django.core.email.backends.smtp.EmailBackend",
+        "BACKEND": "django.core.mail.backends.smtp.EmailBackend",
         "OPTIONS": {
             "host": "localhost",
             "port": 1025,
