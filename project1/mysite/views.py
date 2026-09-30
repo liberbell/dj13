@@ -71,17 +71,20 @@ def mypage(request):
 def contact(request):
     context = {}
     
-    subject = "Title"
-    message = "Content"
-    email_from = os.environ["DEFAULT_EMAIL_FROM"]
-    email_to = [
-        os.environ["DEFAULT_EMAIL_FROM"],
-        
-    ]
-    send_mail(
-        subject,
-        message,
-        email_from,
-        email_to
-    )
+    if request.metthod == "POST":
+        subject = "Request contact recieved"
+        message = "Request contact. "
+        request.post.get("content")
+        email_from = os.environ["DEFAULT_EMAIL_FROM"]
+        email_to = [
+            os.environ["DEFAULT_EMAIL_FROM"],
+
+        ]
+        send_mail(
+            subject,
+            message,
+            email_from,
+            email_to
+        )
+    
     return render(request, "mysite/contact.html", context)
