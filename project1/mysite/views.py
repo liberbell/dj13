@@ -73,8 +73,11 @@ def contact(request):
     
     if request.method == "POST":
         subject = "Request contact recieved"
-        message = "Request contact. \n Name: {}\n Email Address: {}\n Content: {}".format(request.POST.get("name"), request.POST.get("email"), request.POST.get("content"))
-        # request.post.get("content")
+        message = "Request contact. \n Name: {}\n Email Address: {}\n Content: {}".format(
+            request.POST.get("name"),
+            request.POST.get("email"),
+            request.POST.get("content"))
+
         email_from = os.environ["DEFAULT_EMAIL_FROM"]
         email_to = [
             os.environ["DEFAULT_EMAIL_FROM"],
@@ -86,5 +89,6 @@ def contact(request):
             email_from,
             email_to
         )
+        messages.success(request, "Thanks for your contact.")
     
     return render(request, "mysite/contact.html", context)
